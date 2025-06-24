@@ -11,7 +11,7 @@ source:
   sha256: dbde7c35b8e966e29f474d571e499f002b5c92657e8556068aec7bc39b055217
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - queue-monitor = bluesky_widgets.apps.queue_monitor.main:main
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - bluesky-live >=0.0.7
     - numpy
     - suitcase-utils <=0.5.3
@@ -37,6 +37,7 @@ test:
     - which queue-monitor
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/bluesky/bluesky-widgets
