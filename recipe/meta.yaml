@@ -1,5 +1,5 @@
 {% set name = "bluesky-widgets" %}
-{% set version = "0.0.16" %}
+{% set version = "0.0.17" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bluesky-widgets-{{ version }}.tar.gz
-  sha256: 9c1b97f8328901865aecd8fd9e06f3d960b95de814a62f8c1b3ba3919941e096
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: dbde7c35b8e966e29f474d571e499f002b5c92657e8556068aec7bc39b055217
 
 build:
   number: 0
@@ -19,12 +19,13 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.6
+    - pip
+    - setuptools
   run:
+    - python >=3.6
     - bluesky-live >=0.0.7
     - numpy
-    - python >=3.6
     - suitcase-utils <=0.5.3
 
 test:
