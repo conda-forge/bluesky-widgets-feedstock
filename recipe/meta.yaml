@@ -19,12 +19,13 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.6
+    - pip
+    - setuptools
   run:
+    - python >=3.6
     - bluesky-live >=0.0.7
     - numpy
-    - python >=3.6
     - suitcase-utils <=0.5.3
 
 test:
