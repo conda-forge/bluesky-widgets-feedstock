@@ -1,5 +1,5 @@
 {% set name = "bluesky-widgets" %}
-{% set version = "0.0.17" %}
+{% set version = "0.0.18" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: dbde7c35b8e966e29f474d571e499f002b5c92657e8556068aec7bc39b055217
+  sha256: d4e7238c9dcea79e31c1535901fa2b337e8dc0bdfbd7bb50f3bb2550c09b0170
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - queue-monitor = bluesky_widgets.apps.queue_monitor.main:main
